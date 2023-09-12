@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="result">
+        <div class="row">
+            <h3 onclick="remove()">C</h3>
+            <h3 onclick="claculate(`%`)">%</h3>
+            <h3 onclick="claculate(`*`)">*</h3>
+            <h3 onclick="claculate(`/`)">/</h3>
+        </div>
+        <div class="row">
+            <h3 onclick="claculate(`7`)">7</h3>
+            <h3 onclick="claculate(`8`)">8</h3>
+            <h3 onclick="claculate(`9`)">9</h3>
+            <h3 onclick="claculate(`-`)">-</h3>
+        </div>
+        <div class="row">
+            <h3 onclick="claculate(`4`)">4</h3>
+            <h3 onclick="claculate(`5`)">5</h3>
+            <h3 onclick="claculate(`6`)">6</h3>
+            <h3 onclick="claculate(`+`)">+</h3>
+        </div>
+        <div class="row">
+            <h3 onclick="claculate(`1`)">1</h3>
+            <h3 onclick="claculate(`2`)">2</h3>
+            <h3 onclick="claculate(`3`)">3</h3>
+            <h3 onclick="result()">=</h3>
+        </div>
+        <div class="row">
+            <h3 onclick="claculate(`0`)">0</h3>
+            <h3 onclick="claculate(`.`)">.</h3>
+            <h3 onclick="claculate(`(`)">(</h3>
+            <h3 onclick="claculate(`)`)">)</h3>
+        </div>
+    </div>
+    <script>
+        function remove() {
+            document.querySelector(`#result`).value = ``;
+        };
+
+        function claculate(C) {
+            document.querySelector(`#result`).value += C;
+        };
+
+        function result() {
+            var a = document.querySelector(`#result`).value;
+            var b = eval(a);
+            document.querySelector(`#result`).value = b;
+        };
+    </script>
+</body>
+</html>
